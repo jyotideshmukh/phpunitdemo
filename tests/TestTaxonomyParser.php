@@ -43,7 +43,7 @@ class TestTaxonomyParser extends TestCase
 
     public function test_is_taxonomy_parsed_preponed_with_space(){
         $parser = new TaxonomyParser();
-        $result = $parser->parse(" Work; Personal; Family");
+        $result = $parser->parse(" Work; Personal; Family ");
         $expected = ['Work','Personal','Family'];
         $this->assertSame($expected, $result);
     }
