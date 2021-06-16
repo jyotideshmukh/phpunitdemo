@@ -3,11 +3,13 @@
 
 namespace App;
 use App\MetaData;
+use \Ds\Vector;
 
 class Taxonomy
 {
     private $name;
     private MetaData $metaData;
+    private Vector $decendents;
 
     /**
      * Taxonomy constructor.
