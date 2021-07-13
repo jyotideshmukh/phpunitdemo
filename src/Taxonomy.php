@@ -4,6 +4,7 @@
 namespace App;
 use App\MetaData;
 use \Ds\Vector;
+use App\Exceptions\ShortLengthException;
 
 class Taxonomy
 {
@@ -17,7 +18,12 @@ class Taxonomy
      */
     public function __construct($name)
     {
-        $this->name = $name;
+        try {
+            if (strlen($name) > 3)
+                $this->name = $name;
+        }catch(ShortLengthException $e){
+            echo $e->getMessage();
+        }
     }
 
     /**

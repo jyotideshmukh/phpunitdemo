@@ -11,7 +11,7 @@ class OrderTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testOrderProcessed(){
-        $gateway =  $this->createMock(PaymentGateway::class);
+        $gateway =  $this->createStub(PaymentGateway::class);
         //$gateway = $this->getMockBuilder('PaymentGateway')
             //->getMock();
         $gateway->method('charge')->willReturn(true);
